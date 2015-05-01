@@ -25,6 +25,7 @@ main {
 html,
 body {
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -39,72 +40,146 @@ body {
 .intro {
   position: relative;
   width: 100%;
-  height: 643px;
-  z-index: 0;
+  height: 100%;
   .name {
   width: 60%;
-  z-index: 4;
   text-align: center;
   margin-left: 20%;
   margin-right: 20%;
   position: absolute;
-  top: 35%;
+  top: 30%;
   height: 30%;
   }
 }
 .introLayer {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 643px;
-  z-index: 2;
+  z-index: 0;
+  height: 100%;
 }
-/*.menu {
+@media screen and (max-width: 400px) {
+  #toggleButton {
+    height: 2rem;
+    width: 30px;
+    border-radius: 5px;
+    border: 2px black;
+    padding: 1px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  .toggleMenu {
+    width: 100%;
+    height: 3rem;
+    margin-top: 0;
+    padding: 0;
+    li {
+      @include span-columns(12);
+    }
+  }
+  .menu {
+    display: none;
+  }
+}
+.profile {
+  .backstory {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    clear: both;
+    .statement {
+      margin-top: 0;
+    }
+  }
+  .detail {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    text-align: center;
+  }
+}
+.history {
+  @include outer-container;
+  height: 100%;
+  background-color: gray;
+  opacity: 0.8;
+  overflow: hidden;
+  .time {
+    @include span-columns(3);
+    @include omega(4);
+    height: 100%;
+    background-color: blue;
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+  .experience {
+    @include span-columns(9);
+    height: 100%;
+    background-color: blue;
+    margin-top: 25px;
+  }
+}
+.skill {
   width: 100%;
-  height: 3rem;
+  height: 100%;
+  background-color: white;
+  clear: both;
   margin-top: 0;
-  li {
+  @include outer-container;
+  .sandbox {
+    @include span-columns(5);
+    @include omega(6n);
+    background-color: yellow;
+    height: 30%;
+    margin-top: 30px;
+    margin-left: 6.205%;
+  }
+}
+.end {
+  width: 100%;
+  height: 100px;
+  background-color: red;
+}
+@media screen and (min-width: 400px) {
+  #toggleButton {
+    display: none;
+  }
+  .toggleMenu {
+    display: none;
+  }
+  .menu {
+    width: 100%;
+    height: 50px;
+    margin-top: 0;
+  }
+  .item2 {
     display: inline-block;
     @include span-columns(3);
     @include omega(4n);
   }
-}*/
-#toggleButton {
-  height: 2rem;
-  width: 10%;
-  margin: 1rem 45% 1rem;
-  border-radius: 5px;
-  border: 2px black;
-}
-.toggleMenu {
-  width: 100%;
-  height: 3rem;
-  margin-top: 0;
-  padding: 0;
-  li {
-    @include span-columns(12);
-  }
-}
-.backstory {
-  width: 100%;
-  height: 200px;
-  margin-top: 0;
-  clear: both;
-}
-.detail {
-  width: 100%;
-  height: 200px;
-  margin-top: 0;
 }
 /*****************************************************************************
   Module Styles
 ******************************************************************************/
+.hightlight {
+  width: 100%;
+  min-height: 2rem;
+  cursor: pointer;
+  color: blue;
+  z-index: 1;
+}
+.hightlight2 {
+  min-height: 2rem;
+  cursor: pointer;
+  color: blue;
+  z-index: 1;
+}
 .intro {
-  background-image: url("../images/images1.jpg");
+  background: no-repeat center center url("../images/images1.jpg");
   .name {
-  color: yellow;
-  font-size: 2rem;
+  color: black;
+  font-size: 1.5rem;
+  z-index: 1;
   }
 }
 .introLayer {
@@ -121,6 +196,7 @@ body {
 }*/
 .nav {
   background-color: black;
+  height: 50px;
   #toggleButton {
     background-color: transparent;
     border: 0.5rem gray;
@@ -131,14 +207,21 @@ body {
 #toggleButton span:after {
   cursor: pointer;
   height: 2px;
-  width: 44px;
+  width: 29px;
   background: blue;
   position: absolute;
   display: block;
   content: '';
 }
+#toggleButton span:before {
+  margin-top: -6px;
+}
+#toggleButton span:after {
+  margin-top: 6px;
+}
 .toggleMenu {
-  li {
+  display: none;
+  .item {
     padding-top: 1rem;
     background-color: white;
     text-align: center;
@@ -148,17 +231,42 @@ body {
     padding-bottom: 1rem;
   }
 }
-.backstory {
-  background-color: blue;
-  opacity: 0.5;
+.profile {
+  .backstory {
+    background-color: blue;
+    opacity: 0.5;
+  }
+  .detail {
+    background-color: yellow;
+    opacity: 0.5;
+  }
+  .statement {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 1.5rem;
+    padding-top: 5px;
+  }
+  .info {
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 1.5rem;
+    margin-top: 0;
+    padding-top: 5x;
+  }
 }
-.detail {
-  background-color: yellow;
-  opacity: 0.5;
+.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
-.statement {
-  text-align: center;
-  margin-left: 25%;
-  margin-right: 25%;
-  line-height: 1.5rem;
+.menu {
+  background-color: white;
+  .item2 {
+    cursor: pointer;
+    padding-top: 1rem;
+    list-style: none;
+  }
 }
