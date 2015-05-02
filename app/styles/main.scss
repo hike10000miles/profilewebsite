@@ -4,7 +4,7 @@
 
 
 @import '../../bower_components/bourbon/dist/_bourbon.scss';
-$visual-grid: true;
+$visual-grid: fulse;
 $visual-grid-color: green;
 $gril-columns: 12;
 @import '../../bower_components/neat/app/assets/stylesheets/_neat.scss';
@@ -29,6 +29,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  background-color: #7E8AA2;
 }
 
 
@@ -41,7 +42,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: no-repeat center center url("../images/images1.jpg");
+  background: no-repeat center center url("../images/Njoror.jpg");
   background-size: cover;
   .name {
   width: 60%;
@@ -52,8 +53,9 @@ body {
   top: 30%;
   height: 30%;
   color: black;
-  font-size: 1.5rem;
+  font-size: 2rem;
   z-index: 1;
+  font-family: 'Architects Daughter', cursive;
   }
 }
 .introLayer {
@@ -62,13 +64,13 @@ body {
   width: 100%;
   z-index: 0;
   height: 100%;
-  background-color: #91ffb4;
-  opacity: 0.6;
+  background-color: #7E8AA2;
+  opacity: 0.5;
   position: absolute;
 }
 .nav {
   height: 50px;
-  background-color: white;
+  background-color: #000000;
   #toggleButton {
     background-color: transparent;
     border: 0.5rem gray;
@@ -78,20 +80,22 @@ body {
   @include outer-container;
   height: 100%;
   width: 100%;
-  background-color: gray;
-  opacity: 0.8;
   overflow: hidden;
   .time {
-    font-family: $helvetica;
+    background-color: #263248;
+    color: #000000;
+    font-family: 'Bree Serif', serif;
   }
   .experience {
-    font-family: $georgia;
+    background-color: #263248;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
   }
 }
 .skill {
+  background-color: #263248;
   width: 100%;
   height: 100%;
-  background-color: white;
   clear: both;
   margin-top: 0;
   @include outer-container;
@@ -107,11 +111,12 @@ body {
 .end {
   width: 100%;
   height: 100px;
-  background-color: red;
+  background-color: #000000;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: #ffffff;
+  font-family: 'Bree Serif', serif;
 }
 /*****************************************************************************
   Module Styles
@@ -120,7 +125,7 @@ a {
   width: 100%;
   min-height: 2rem;
   cursor: pointer;
-  background-color:red;
+  background-color: #263248;
   z-index: 1;
 }
 #toggleButton span,
@@ -141,22 +146,19 @@ a {
   margin-top: 6px;
 }
 .toggleMenu {
-  /*display: none;
-  background-color: gray;*/
   .item {
     padding-top: 1rem;
     text-align: center;
     list-style: none;
+    color: #263248;
   }
 }
 .profile {
   .backstory {
-    background-color: blue;
-    opacity: 0.5;
+    opacity: 1;
   }
   .detail {
-    background-color: yellow;
-    opacity: 0.5;
+    opacity: 1;
   }
   .statement {
     text-align: center;
@@ -164,6 +166,8 @@ a {
     margin-right: 10%;
     line-height: 1.5rem;
     padding-top: 5px;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
   }
   .info {
     margin-left: 10%;
@@ -171,6 +175,8 @@ a {
     line-height: 1.5rem;
     margin-top: 0;
     padding-top: 5x;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
   }
 }
 .is-fixed {
@@ -195,7 +201,7 @@ a {
     height: 136px;
     margin-top: 0;
     padding: 0;
-    background-color: gray;
+    background-color: #000000;
     display: none;
     li {
       @include span-columns(12);
@@ -222,27 +228,8 @@ a {
   width: 25%;
   min-height: 50px;
   cursor: pointer;
-  background-color:red;
   z-index: 1;
  }
-}
-@media screen and (min-width: 800px) {
-  .profile {
-    @include outer-container;
-  }
-  .backstory,
-  .empty,
-  .detail {
-    @include span-columns(4);
-    @include omega(5n);
-  }
-  .empty {
-    height: 100%;
-    background-color: red;
-    opacity: 0.6;
-    text-align: center;
-    line-height: 1.5rem;
-  }
 }
 @media screen and (max-width: 800px) {
   .profile {
@@ -269,12 +256,28 @@ a {
     text-align: center;
   }
 }
+@media screen and (min-width: 800px) {
+  .profile {
+    @include outer-container;
+  }
+  .backstory,
+  .empty,
+  .detail {
+    @include span-columns(4);
+    @include omega(5n);
+  }
+  .empty {
+    height: 100%;
+    text-align: center;
+    line-height: 1.5rem;
+    color: #263248;
+  }
+}
 @media screen and (max-width: 500px) {
   .time {
     @include span-columns(8);
     @include shift(2);
     height: 15%;
-    background-color: blue;
     margin-top: 5%;
   }
   .experience {
@@ -288,14 +291,12 @@ a {
       @include span-columns(8);
       @include shift(2);
       height: 15%;
-      background-color: blue;
     }
     .experience {
       display: block;
       @include span-columns(8);
       @include shift(2);
       height: 15%;
-      background-color: blue;
       margin-bottom: 10px;
     }
   }
@@ -307,13 +308,11 @@ a {
       @include span-columns(3);
       @include omega(4n);
       height: 15%;
-      background-color: blue;
     }
     .experience {
       @include span-columns(9);
       margin-right: 0;
       height: 15%;
-      background-color: blue;
       margin-bottom: 20px;
     }
   }
