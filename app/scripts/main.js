@@ -6,9 +6,6 @@
     $('.item').hover(function() {
       $(this).toggleClass('hightlight');
       });
-    $('.item2').hover(function() {
-      $(this).toggleClass('hightlight2');
-    });
     $(window).scroll(function() {
     	if ($(this).scrollTop() > 643){
     		$('.nav').addClass('is-fixed');
@@ -17,7 +14,7 @@
     	}
     });
     $('#toggleButton').on('click', function() {
-    	$('.nav').find('.toggleMenu').fadeToggle(400);
+    	$('.nav').find('.toggleMenu').fadeToggle(300);
     });
   });
 })(jQuery);

@@ -73,14 +73,6 @@ body {
     border: 0.5rem gray;
   }
 }
-.menu {
-  padding-left: 40px;
-  .item2 {
-    cursor: pointer;
-    padding-top: 1rem;
-    list-style: none;
-  }
-}
 .history {
   @include outer-container;
   height: 100%;
@@ -88,6 +80,12 @@ body {
   background-color: gray;
   opacity: 0.8;
   overflow: hidden;
+  .time {
+    font-family: $helvetica;
+  }
+  .experience {
+    font-family: $georgia;
+  }
 }
 .skill {
   width: 100%;
@@ -124,13 +122,6 @@ a {
   background-color:red;
   z-index: 1;
 }
-.hightlight2 {
-  height: 50px;
-  width: 25%;
-  cursor: pointer;
-  background-color: blue;
-  z-index: 1;
-}
 #toggleButton span,
 #toggleButton span:before,
 #toggleButton span:after {
@@ -149,8 +140,8 @@ a {
   margin-top: 6px;
 }
 .toggleMenu {
-  display: none;
-  background-color: gray;
+  /*display: none;
+  background-color: gray;*/
   .item {
     padding-top: 1rem;
     text-align: center;
@@ -203,12 +194,10 @@ a {
     height: 136px;
     margin-top: 0;
     padding: 0;
+    background-color: gray;
     li {
       @include span-columns(12);
     }
-  }
-  .menu {
-    display: none;
   }
 }
 @media screen and (min-width: 400px) {
@@ -216,20 +205,24 @@ a {
     display: none;
   }
   .toggleMenu {
-    display: none;
-  }
-  .menu {
     width: 100%;
     height: 50px;
     margin-top: 0;
     padding-left: 0;
   }
-  .item2 {
+  .item {
     display: block;
     width: 25%;
     float: left;
     text-align: center;
   }
+  .hightlight {
+  width: 25%;
+  min-height: 50px;
+  cursor: pointer;
+  background-color:red;
+  z-index: 1;
+ }
 }
 @media screen and (min-width: 800px) {
   .profile {
@@ -286,7 +279,7 @@ a {
     display: none;
   }
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 1050px) {
   .history {
     padding-top: 5%;
     .time {
@@ -301,9 +294,25 @@ a {
       @include shift(2);
       height: 15%;
       background-color: blue;
+      margin-bottom: 10px;
     }
   }
 }
 @media screen and (min-width: 1050px) {
-
+  .history {
+    padding-top: 5%;
+    .time {
+      @include span-columns(3);
+      @include omega(4n);
+      height: 15%;
+      background-color: blue;
+    }
+    .experience {
+      @include span-columns(9);
+      margin-right: 0;
+      height: 15%;
+      background-color: blue;
+      margin-bottom: 20px;
+    }
+  }
 }
