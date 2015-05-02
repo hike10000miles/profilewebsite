@@ -3,11 +3,12 @@
 (function($) {
   $(document).ready(function() {
     // Add your jQuery code here
+    var fullHeight = window.screen.height;
     $('.item').hover(function() {
       $(this).toggleClass('hightlight');
       });
     $(window).scroll(function() {
-    	if ($(this).scrollTop() > 643){
+    	if ($(this).scrollTop() > fullHeight){
     		$('.nav').addClass('is-fixed');
     	} else {
     		$('.is-fixed').removeClass('is-fixed');
