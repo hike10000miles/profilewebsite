@@ -201,6 +201,9 @@ a {
   width: 100%;
   z-index: 1;
 }
+.sandbox {
+  font-family: 'Bree Serif', serif;
+}
 @media screen and (max-width: 400px) {
   #toggleButton {
     height: 2rem;
@@ -301,34 +304,28 @@ a {
   }
 }
 @media screen and (min-width: 500px) and (max-width: 1050px) {
-  .history {
-    padding-top: 5%;
-    .time {
-      @include span-columns(8);
-      @include shift(2);
-      height: 15%;
-    }
-    .experience {
-      display: block;
-      @include span-columns(8);
-      @include shift(2);
-      height: 15%;
-    }
+  .time {
+    @include span-columns(8);
+    @include shift(2);
+    height: 15%;
+  }
+  .experience {
+    display: block;
+    @include span-columns(8);
+    @include shift(2);
+    height: 15%;
   }
 }
 @media screen and (min-width: 1050px) {
-  .history {
-    padding-top: 5%;
-    .time {
-      @include span-columns(3);
-      @include omega(4n);
-      height: 15%;
-    }
-    .experience {
-      @include span-columns(9);
-      margin-right: 0;
-      height: 15%;
-    }
+  .time {
+    @include span-columns(3);
+    @include omega(4n);
+    height: 15%;
+  }
+  .experience {
+    @include span-columns(9);
+    margin-right: 0;
+    height: 15%;
   }
 }
 #sb1 {
