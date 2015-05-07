@@ -202,13 +202,6 @@ a {
     color: #000000;
     font-family: 'Open Sans', sans-serif; }
 
-.is-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1; }
-
 .sandbox {
   font-family: 'Bree Serif', serif;
   cursor: pointer;
@@ -439,3 +432,8 @@ a {
   font-family: 'Open Sans', sans-serif; }
   .detail h3 {
     text-align: center; }
+
+.stuck {
+  position: fixed;
+  top: 0;
+  width: 100%; }
